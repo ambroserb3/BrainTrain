@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleButton : MonoBehaviour {
+    public AudioSource Theme;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,8 @@ public class TitleButton : MonoBehaviour {
 
     public void GoToPlay()
     {
+        GameObject theme = GameObject.Find("Theme");
+        Destroy(theme);
         SceneManager.LoadScene(0);
     }
 }

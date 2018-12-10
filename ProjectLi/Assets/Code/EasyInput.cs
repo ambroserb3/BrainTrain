@@ -11,11 +11,13 @@ public class EasyInput : MonoBehaviour {
     // Use this for initialization
     void Start () {
         scoreCounter = 0;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+        //TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad, false, false, false, false, "Answer", 4);
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
 
     public void Submission()
     {
@@ -26,7 +28,12 @@ public class EasyInput : MonoBehaviour {
             Debug.Log("correct");
             resourceInts.Generate();
             mainInputField.text = "";
-            scoreCounter++;
+            scoreCounter += 10;
         }
+        else
+        {
+            scoreCounter -= 5;
+        }
+        //TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad, false, false, false, false, "Answer", 4);
     }
 }

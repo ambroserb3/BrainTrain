@@ -19,4 +19,15 @@ public class PlayButton : MonoBehaviour {
     {
         SceneManager.LoadScene(1);
     }
+
+
+    public void GoToHow()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void End()
+    {
+        Application.Quit();
+    }
 }

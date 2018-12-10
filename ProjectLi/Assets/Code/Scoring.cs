@@ -17,9 +17,8 @@ public class Scoring : MonoBehaviour {
     void Start() {
         DontDestroyOnLoad(this);
         score.text = "0";
-        timer.text = "2:00";
+        timer.text = "Time: 2:00";
         time = 120;
-
     }
 
     // Update is called once per frame
@@ -34,7 +33,7 @@ public class Scoring : MonoBehaviour {
 
             time -= Time.deltaTime;
             var timerFormatted = string.Format("{0:0}:{1:00}", Mathf.Floor(time / 60), time % 60);
-            timer.text = timerFormatted;
+            timer.text = "Time: " + timerFormatted;
             score.text = "Score: " + inputs.scoreCounter;
             scoreFinal = inputs.scoreCounter;
             if (time <= 0)
@@ -46,7 +45,7 @@ public class Scoring : MonoBehaviour {
 
     }
 
-    void timeOut()
+    public void timeOut()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {

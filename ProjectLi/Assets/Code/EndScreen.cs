@@ -10,13 +10,14 @@ public class EndScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        GameObject score = GameObject.Find("ScoreManager");
+        Scoring scores = score.GetComponent<Scoring>();
+        endscore.text = "Your Score:  " + scores.scoreFinal;
+        Destroy(score);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        GameObject score = GameObject.Find("ScoreManager");
-        Scoring scores = score.GetComponent<Scoring>();
-        endscore.text = "Your Score:  " + scores.scoreFinal;
+
     }
 }
